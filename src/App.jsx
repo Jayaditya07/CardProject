@@ -34,16 +34,33 @@ export default function App()
         <div className="card-body">
           <h2>Kurkure Masala Munch Crisps</h2>
           <p>75g</p>
-          <p>Price: ₹20</p>
+          <p>Price: {price}</p>
+
+          <p className="total-price" >
+            Total ₹{price * quantity}
+          </p>
+
         </div>
 
         <div className="card-footer">
-         {quantity == 0 ?
+         
 
-           <button onClick={handelAdd}>Add</button>
-        }:(
-          
-        )
+           {quantity === 0 ? (
+           <button onClick={handelAdd} >Add</button>
+           ):(
+
+            <div className="quantity-control" >
+
+              <button onClick={decreaseQuantiy}>-</button>
+
+              <span>{quantity}</span>
+
+              <button onClick={increaseQuantity} >+</button>              
+
+            </div>
+
+           )}
+        
         </div>
       
       </div>
